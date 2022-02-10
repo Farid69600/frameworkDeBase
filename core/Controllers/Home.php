@@ -41,14 +41,6 @@ class Home extends AbstractController
         //sera disponible dans ce template
 
 
-
-
-
-        //je peux appeler la methode "save", avec un getteur et un setteur sur le controlleur "new" 
-
-
-        
-
         return $this->render("home/index", [
             "pageTitle"=> "Home Page",
         // "elements" => $elements

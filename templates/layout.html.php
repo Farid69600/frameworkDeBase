@@ -11,34 +11,41 @@
 </head>
 <body>
 
-<nav class="navbar nav-expand-lg navbar-light bg-info mb-5"><a href="/hb_php/bistrot" class="navbar-brand">BASE FRAMEWORK</a>
+<nav class="navbar nav-expand-lg navbar-light bg-dark mb-5 ">
+  <a href="/hb_php/cyclisterie" class="navbar-brand mr-5">BASE FRAMEWORK</a>
+  <div class="d-flex flex-row">
+      <ul class="d-flex flex-row">
 
-<!-- crée un lien "bouton" qui permet de céer un cocktail -->
-    <!-- <a href="?type=cocktail&action=new" class="btn btn-danger">Créer un cocktail</a> -->
+          <?php if(isset($_SESSION['user'])){ ?>
+              <li class="nav-item"><a href="/" class="btn btn-warning"><?= $_SESSION['user']['displayName'] ?></a></li>
+          <?php } ?>
 
-<!-- crée un lien "bouton" qui permet de voir toutes les informations -->
-    <!-- <a href="?type=info&action=index" class="btn btn-success">Voir nos informations</a> -->
 
-<!-- crée un lien "bouton" qui permet de créer une information -->
-    <!-- <a href="?type=info&action=new" class="btn btn-warning">Créer une nouvelle information</a> -->
-
+          <li class="nav-item"><a href="?type=user&action=signup" class="btn btn-warning">Créer votre compte</a></li>
+          <br>
+          <li class="nav-item"><a href="?type=user&action=signin" class="btn btn-warning">Se connecter</a></li>
+          <br>
+          <li class="nav-item"><a href="?type=user&action=signout" class="btn btn-danger">Déconnexion</a></li>
+      </ul>
+  </div>
 </nav>
 
-<div class="alert alert-warning alert-dismissible fade <?php if($_GET['info']=='errDel'){ echo"show";}?>" role="alert">
-  <strong>ERREUR</strong> Cocktail non supprimer car n'existe pas 
+<div class="alert alert-warning alert-dismissible fade <?php if(isset($_GET['info'])){ echo"show";}?>" role="alert">
+  <strong>Erreur</strong> <?=$_GET['info'] ?>
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
-
-
+<div class="alert alert-warning alert-dismissible fade <?php if($_GET['info']=='noId'){ echo"show";}?>" role="alert">
+  <strong>Erreur</strong> ce vélo n'existe pas.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 <div class="container">
-            
+
 
             <?=  $pageContent ?>
 
 
 </div>
         
-
 
 <h1 class="mt-5" >FIN DE PAGE</h1>
 

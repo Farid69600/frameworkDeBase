@@ -23,6 +23,10 @@ public function setDescription($description)
 } */
 
 
+
+
+
+
 // du fait d'hériter dela classe AbstractModel, et d'avoir paramétré un nom de table
 //valide, on dispose déja de trois methodes pour intéragir avec la BDD : 
 
@@ -32,6 +36,5 @@ public function setDescription($description)
 //(création, modification, recherche par clé étrangère, etc)
 
 
-// je vais utiliser une method "save" pour récuperer un objet avec ses propriétés
 
 }

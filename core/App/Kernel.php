@@ -5,9 +5,12 @@ namespace App;
 
 class Kernel
 {
+
     public static function run()
     {
-        //ces deux variables peuvent etre utilisées pour fixer la page d'accueil par défaut
+
+//ces deux variables peuvent etre utilisées pour fixer la page d'accueil par défaut
+
         $type = 'home';
         $action = 'index';
 
@@ -21,5 +24,8 @@ class Kernel
 
         $controller = new $nomDeType();
         $controller->$action();
+
     }
+
+
 }
